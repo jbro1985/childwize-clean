@@ -13,7 +13,8 @@ export default function LoginForm() {
     try {
       await signInWithEmail(email);
       setMessage('Check your email for a login link.');
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       setMessage('Failed to send magic link');
     }
     setLoading(false);
